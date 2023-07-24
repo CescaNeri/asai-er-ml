@@ -36,6 +36,42 @@ Robinson's principle proceed by contradiction.
 Strings which starts with an upper letter.
 Variable are SHARED: goals in a conjunctive query can share variables.
 
+## TuProlog Playground
 
+`https://pika-lab.gitlab.io/tuprolog/2p-kt-web/`
 
+## Exercise
+
+1. Maria reads logic programming book by author Peter Lucas
+
+```prolog
+read(maria, book(author('Peter', 'Lucas'), lp))
+```
+
+2. Anyone likes shopping if she is a girl
+
+```prolog
+like(shopping, X) :- girl(X)
+```
+
+3. Who likes shopping?
+
+```prolog
+girl('Roberta')
+
+?- like(shopping, X)
+>>> 'Roberta'
+```
+
+4. Kirke hates any city if it is big and crowdy
+
+```prolog
+city(bologna)
+big(bologna)
+crowdy(bologna)
+
+hate(X, kirke) :- city(X), big(X), crowdy(X)
+hate(bologna, kirke)
+>>> True
+```
 
