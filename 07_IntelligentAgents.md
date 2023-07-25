@@ -83,3 +83,81 @@ Agents are intelligent when they have cognitive capabilities and know when and h
 
 Having cognitive capabilities does not automatically lead to **intelligence** as machines are not provided with common sense.
 
+### Representation
+
+In-memory representation of the environment leveraging on some model, reified into some language, constructed on top of perception enabling complex deliberation.
+
+*Can software agents learn from data?*
+
+Agents who actually learn should:
+
+* Have access to data
+* Be autonomous in design decisions
+* Have computational power
+
+On the other hand, agents who exploits pre-trained models do not need access to data, they can use the model for perception without the need to take decisions or compute.
+
+## Multi Agent System
+
+Agents are the entities encapsulating behavior (intelligence).
+
+**Concurrency**: agents are the entities encapsulating control flow (order according to which functions are executed within a program).
+With **concurrent** programs, the machine simultaneously execute multiple processes.
+
+Agents have **computational autonomy** as they have their own **control flow**.
+
+With **distributed systems**, agents are the entities in charge of communicating ver the network.
+
+**Simulation**: focus on behavior of simulated entities.
+
+* Agents are the entities in the simulated world
+* The agent is a simulated entity
+
+### Agent Oriented Programming
+
+Agents are active objects which encapsulate the control flow and communication.
+
+```python
+memory = dict()
+
+while True:
+    percepts = sense()
+    memory = update(memory, percepts)
+    action = deliberate(memory)
+    act(action)
+```
+
+**Cognitive agents** focus on human-like capabilities and abstractions.
+
+### BDI Agents
+
+Cognitive aspects fitting the mental state of each agent:
+
+* Belief (things that the agent think to know)
+* Desires (goal that the agent is willing to pursue)
+* Intentions (activities the agent is currently performing, possibly following some plan)
+* Plans (procedural knowledge about how to pursue goals)
+
+BDI Agents follows an **event-driven architecture** (relevant structure representing relevant happening).
+New events may spawn intentions to execute plans (control flows controlling the agent's behavior).
+
+### Control Loop of BDI Agents
+
+1. Revise belief base with new messages and percepts
+2. Add relevant events to the events stack
+3. Pick next event from the event stack, if any
+4. Prior intention -> select the intention
+5. Future intention -> select a plan
+6. Execute one step of the intention    
+
+### Jason Syntax
+
+```prolog
+human(socrates) -> fact
+mortal(X) :- human(X) -> rule
+
+!reach(Destination) -> achievement
+?discover(X) -> intention
+
+Event : Guard <- Action1; ...;ActionN -> plan
+```
