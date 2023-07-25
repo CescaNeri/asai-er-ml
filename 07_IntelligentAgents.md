@@ -61,3 +61,25 @@ Interaction is different from **communication**.
 -> Communication is direct (deliberate) exchange of information.
 
 **Communication** refers to th exchange of messages to pass information among multiple agents.
+The role of the receiver is important in communication: receiver agent may need to eventually handle the message. 
+How the message is handled depends on the nature of the agent.
+
+* Reactive agent (start a computation as soon as the message is received)
+* Computationally-autonomous agent (memorizes the message and decides when/how to handle it)
+
+### Autonomy of Agents
+
+Agents are **autonomous** when they encapsulate the criterion by which they select which goal to pursue (motivational autonomy) or by which they choose which action to do while pursuing a goal (executive autonomy).
+
+Agents are intelligent when they have cognitive capabilities and know when and how to use them to pursue their goals:
+
+* Perceiving stimuli and recognize abstractions
+* Representing knowledge
+* Learning from the experience
+* Memorizing for later re-use
+* Planning courses of actions to pursue a goal
+* Reasoning about knowledge
+* Interact with other agents to exchange information
+
+Having cognitive capabilities does not automatically lead to **intelligence** as machines are not provided with common sense.
+
